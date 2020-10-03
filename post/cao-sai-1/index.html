@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（1） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（1）</h2>
+            <div class="post-date">2019-06-30</div>
+            
+              <div class="feature-container" style="background-image: url('https://i.loli.net/2019/08/22/8BirnmQRhLwMA9O.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>😅Pixiv ID: 49767048</p>
+<h1 id="废话和准备">废话和准备</h1>
+<!-- more -->
+<hr>
+<p><s>来自一位不争气的蒟蒻</s></p>
+<hr>
+<h2 id="谈谈c">谈谈C++</h2>
+<p><code>不得不说C++很优秀功能和全面，这也是我所接触到底第一种语言， 听说你们的信息技术会直接学习 python ，那么废话不多说我们直接开始C++的 **成仙之路**</code></p>
+<hr>
+<h2 id="了解c">了解C++</h2>
+<blockquote>
+<p><s>以下内容全是抄的</s>没有什么意义，建议跳过</p>
+</blockquote>
+<blockquote>
+<p>可以忽略不计</p>
+</blockquote>
+<ol>
+<li>
+<p>C++是从C语言发展而来的，而C语言的历史可以追溯到1969年。 在1969年，美国贝尔实验室的Ken Thompson为DECPDP-7计算机设计了一个操作系统软件，这就是最早的UNIX。接着，他又根据剑桥大学的Martin Richards设计的BCPL语言为UNIX设计了一种便于编写系统软件的语言，命名为B。</p>
+</li>
+<li>
+<p>B语言是一种无类型的语言，直接对机器字操作，这一点和后来的C语言有很大不同。作为系统软件编程语言的第一个应用，Ken  Thompson使用B语言重写了其自身的解释程序。                    1972—1973年间，同在贝尔实验室的Denis Ritchie改造了B语言，为其添加了数据类型的概念，并将原来的解释程序改写为可以在直接生成机器代码的编译程序，然后将其命名为C。</p>
+</li>
+<li>
+<p>1973年，Ken  Thompson小组在PDP-11机上用C重新改写了UNIX的内核。与此同时，C语言的编译程序也被移植到IBM 360/370、Honeywell 11以时VAX-11/780等多种计算机上，迅速成为应用最广泛的系统程序设计语言。 然而，C语言也存在一些缺陷，例如类型检查机制相对较弱、缺少支持代码重用的语言结构等，造成用C语言开发大程序比较困难。</p>
+</li>
+<li>
+<p>为了克服C语言存在的缺点，贝乐实验室的Bjarne Stroustrup博士及其同事开始对C语言进行改进和扩充，将“类”的概念引入了C语言，构成了最早的C++语言（1983）。后来，Stroustrup和他的同事们又为C++引进了运算符重载、引用、虚函数等许多特性，并使之更加精炼，于1989后推出了AT&amp;T C++ 2.0版。随后美国国家标准化协会ANSI(American National Standard Instiute)和国际标准化组织ISO(International Standards Organization)一起进行了标准化工作，并于1998年正式发布了C++语言的国际标准ISO/IEC:98-14882。各软件商推出的C++编译器都支持该标准，并有不同程序的拓展。</p>
+</li>
+<li>
+<p>C++支持面向对象的程序设计方法，特别适合于中型和大型的软件开发项目，从开发时间、费用到软件的重用性、可扩充性、可维护性和可靠性等方面，C++均具有很大的优越性。同时，C++又是C语言的一个超集，这就使得许多C代码不经修改就可被C++编译通过。</p>
+</li>
+</ol>
+<hr>
+<h2 id="准备工作">准备工作</h2>
+<p>必须要做的</p>
+<ul>
+<li>编译器：</li>
+</ul>
+<blockquote>
+<p>（PC）<a href="https://www.lanzous.com/b897451">Dev-C++</a></p>
+</blockquote>
+<blockquote>
+<p>（PE）<a href="https://pan.baidu.com/s/1Yc2AWOdLpkeujeVpIN1LMw">C++编译器</a>  提取码：s8ic</p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.runoob.com/try/runcode.php?filename=helloworld&amp;type=cpp">在线编译器</a></p>
+</blockquote>
+<ul>
+<li>测试平台：</li>
+</ul>
+<blockquote>
+<p>（必须注册！！！）<a href="https://www.luogu.org/">洛谷</a></p>
+</blockquote>
+<blockquote>
+<p>(同上)<a href="http://ybt.ssoier.cn:8088/">教材同步测评</a></p>
+</blockquote>
+<ul>
+<li>书籍资料：</li>
+</ul>
+<blockquote>
+<p><a href="https://detail.m.tmall.com/item.htm?id=571738858361&amp;abtest=28&amp;rn=4a4bec791362d5bba69b89a5082b40f6&amp;sid=4ed0ba758b312c452b28bb8e771df97d">信息学奥赛一本通（C++版）</a>（可以只买两本但是建议三本买全）</p>
+</blockquote>
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1VkyS9t5yuuVthKIutTzQnw">计算机基础知识</a>  提取码: tzej</p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.runoob.com/cplusplus/cpp-tutorial.html">自学网站</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1I9cCnLEWJaaKKyK9PWB7gQ">算法竞赛入门</a> 提取码：tj30</p>
+</blockquote>
+<p>看看的资料和书籍：</p>
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1m-bLjTwQQVbziOqb21G4sw">C语言解惑</a> 提取码: x1zx</p>
+</blockquote>
+<blockquote>
+<p>所有关于C++的文件：<a href="https://pan.baidu.com/s/1VsvncHgAp9EDbIIQkEMPiw">文件</a> 提取码: 4pvr</p>
+</blockquote>
+<blockquote>
+<p>闲书（关于信息技术）：<a href="https://www.lanzous.com/b970294/">闲书</a>密码:lrx</p>
+</blockquote>
+<blockquote>
+<p>大佬收集的电子书：<a href="https://github.com/ruanyf/free-books#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91">这里</a></p>
+</blockquote>
+<h4 id="看一个入门程序">看一个入门程序？</h4>
+<pre><code class="language-c++">#include&lt;iostream&gt; //头文件申明 ，预处理 
+using namespace std;//命名空间 
+int main()//主函数
+{
+	cout&lt;&lt;&quot;Hello，world&quot;&lt;&lt;endl;//输出内容 
+                              //也可以写成：cout&lt;&lt;&quot;Hello，world\n&quot;;
+    return 0; //程序结束 
+}
+</code></pre>
+<hr>
+<h1 id="准备的细节第一根头发地脱落">准备的细节（<s>第一根头发地脱落</s>）</h1>
+<hr>
+<h3 id="对于本人所用的编译器环境和oj说明">对于本人所用的编译器,环境和OJ说明</h3>
+<ol>
+<li>编译器：G++ ；  软件：<a href="https://www.lanzous.com/b897451">Dev-C++</a><br>
+(官方要求软件，<s>虽然真的不好用，简单既是优点又是缺点</s>)<br>
+2.环境（可以不用在意，本人是C++）：<br>
+<img src="https://i.loli.net/2019/08/22/dswAJq8gS2U7E1u.jpg" alt="环境" loading="lazy"></li>
+</ol>
+<p>3.OJ(测试平台)：</p>
+<ul>
+<li><a href="https://www.luogu.org/">洛谷</a></li>
+</ul>
+<blockquote>
+<p>优点：页面优秀，网课性价比高，大牛众多，有系统的刷题路线,有详细的题解。<br>
+缺点：数据不严密，测试分数与官方差距较大，题目难度不平均。</p>
+</blockquote>
+<ul>
+<li><a href="http://ybt.ssoier.cn:8088/">一本通自带</a>（四川省的石室中学搭建）</li>
+</ul>
+<blockquote>
+<p>优点：数据较为严密，题目较多，和一本通题目相符<br>
+缺点：页面太过简洁，没有题解和错误原因，容易崩溃。</p>
+</blockquote>
+<hr>
+<h3 id="编译器安装已经安装了的请跳过">编译器安装（<s>已经安装了的请跳过</s>）：</h3>
+<p><a href="https://www.bilibili.com/video/av66171526/">到B站观看</a></p>
+<hr>
+ <iframe width="100%" height= "315" src="//player.bilibili.com/player.html?aid=66053983&cid=114580795&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p><strong>现在已经更新了另外一个不限速下载的网盘，下载起来会好很多！！！！</strong></p>
+<ul>
+<li>继续：</li>
+</ul>
+<p>1.下载自己需要的版本（上面有<a href="https://www.lanzous.com/b897451">链接</a>，也可以自己去找，腾讯官网上有）<br>
+2.打开后选择如图（<s>不要问我为什么不选中文，因为没有</s> ）</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/08/22/mwHOL6.jpg" alt="第二步" loading="lazy"></figure>
+<p>3.同意过后继续（<s>必须同意，不同意你用个XX</s>）</p>
+<p><img src="https://s2.ax1x.com/2019/08/22/mwHqQ1.jpg" alt="第三步" loading="lazy"><br>
+4.现在选择安装的部分最好是full(其它也行)<br>
+<img src="https://s2.ax1x.com/2019/08/22/mwHLsx.jpg" alt="第四步" loading="lazy"><br>
+5.安装到哪里就随便你了（<s>我也管不到</s>）<br>
+<img src="https://s2.ax1x.com/2019/08/22/m095TA.jpg" alt="m095TA.jpg" loading="lazy"><br>
+6,。后面等一会儿，等到下面这个（<s>等不到就继续等</s>)<br>
+<img src="https://s2.ax1x.com/2019/08/22/m094wd.jpg" alt="m094wd.jpg" loading="lazy"><br>
+<img src="https://s2.ax1x.com/2019/08/22/m09heH.jpg" alt="m09heH.jpg" loading="lazy"><br>
+7.我们再打开这个程序，现在就可以选中文了<br>
+<img src="https://s2.ax1x.com/2019/08/22/mwHHzR.jpg" alt="第七步" loading="lazy"><br>
+8.下面就直接往下就行了，可以换主题<br>
+<img src="https://s2.ax1x.com/2019/08/22/m09oFI.jpg" alt="m09oFI.jpg" loading="lazy"><br>
+9.下面我们就可以开始愉快的码代码了（ Ctrl+N 新建源文件 ）</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/08/22/m0PkCt.md.jpg" alt="m0PkCt.md.jpg" loading="lazy"></figure>
+<p>10.下面就是写代码好后的操作：编译（F9）—&gt;运行(F10)【或者直接F11】:</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/08/23/mBDXa6.jpg" alt="m0PkCt.md.jpg" loading="lazy"></figure>
+<p>代码：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	cout&lt;&lt;&quot;Hello,world&quot;&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<hr>
+<p><strong>终于搞好了，我们搞点东西来庆祝一下吧：</strong><br>
+<img src="https://s2.ax1x.com/2019/08/23/mBsQpD.jpg" alt="1.png" loading="lazy"><br>
+代码：</p>
+<pre><code class="language-C++">
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	for(int i=0; ;++i)
+	    cout&lt;&lt;&quot;我们成功安装Dev-c++了！&quot;&lt;&lt;endl;
+	return 0; 
+ } 
+ 
+</code></pre>
+<p><code>大家跑的时候注意一下这是个死循环不会停</code>,<s>我不会告诉你我把学校机房的电脑直接高蓝屏了（当然不可能只跑了一点点时间）</s></p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/08/22/Hod7FTMLyc5gGrK.jpg" alt="s" loading="lazy"></figure>
+<hr>
+<p>11.最后有一个小问题，可能调试的时候回闪退就像下面一样改一下就好了：<br>
+<img src="https://s2.ax1x.com/2019/08/22/m0CjgK.jpg" alt="调试1" loading="lazy"><br>
+把原来的 NO 改为 YES <img src="https://s2.ax1x.com/2019/08/22/m0CX36.jpg" alt="调试2" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/60f31aebbf058.gif" alt="设置过程" loading="lazy"></p>
+<ul>
+<li>下面是一些快捷键：<br>
+<img src="https://s2.ax1x.com/2019/08/22/m0C2hq.jpg" alt="快捷键" loading="lazy"></li>
+</ul>
+<blockquote>
+<p>还有问题的话可以私信或者评论，我定会尽自己所能解答（<s>我不行就大家一起讨论去问大佬</s>）</p>
+</blockquote>
+<hr>
+<h3 id="洛谷">洛谷</h3>
+<ul>
+<li>这个就自己去探索就行了，管理员人都很好，有问题直接问他们就行了。</li>
+</ul>
+<h3 id="一本通自带">一本通自带</h3>
+<ul>
+<li>注册后刷题就行，管理员永远联系不上。
+<hr>
+</li>
+</ul>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

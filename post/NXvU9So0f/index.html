@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（8） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（8）</h2>
+            <div class="post-date">2019-08-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://cans518.github.io//post-images/NXvU9So0f.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>🚌Pixiv ID: 76435086</p>
+<h1 id="简单的数组">简单的数组</h1>
+<!-- more -->
+<hr>
+<ul>
+<li>前面吧，我们搞定了一些简单的逻辑运算和数据运算，也接触到了一些数据的储存与调用，<s>至少我们会写<code>A+B</code>这个史诗级问题了</s><br>
+有问题的也不要怕，我们可以慢慢来，回去看看之前的文章，问问其它的大佬 <s>（女装大佬）</s>，当然你们不嫌弃我这个蒟蒻的话也可以给我说，大家一起讨论。</li>
+</ul>
+<hr>
+<p><strong>好了废话说完了，我们先来复习一下前面的内容</strong></p>
+<ol>
+<li>
+<p>解决A+B Problem：</p>
+<ul>
+<li>键入a,b两个数字，计算a+b的值并输出：</li>
+</ul>
+</li>
+</ol>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a,b;
+	cin&gt;&gt;a&gt;&gt;b;
+	cout&lt;&lt;a+b&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p>你现在别告诉我你现在连这个都看不懂就只有回炉重造了~~（直接打死）~~<br>
+我们这里只是键入了两个数据，就定义了两个<code>int</code>型的变量。然后我们继续：</p>
+<hr>
+<blockquote>
+<p><strong>今天你的的心情很好沿着河岸在悠哉悠哉地散步，这时你的手机QQ响了，你以为是你的男神/女神给你发消息了，但是当你打开QQ却发现是小茗那个烦人精，他让你帮他储存1000个数据并且可以随时的查看（要不是他还有用早就英年早逝了）</strong><br>
+于是苦逼的你回家打开了电脑开始了疯狂<code>Ctrl+C</code>和<code>Ctrl+V</code>就得到了下面的这个东西：</p>
+</blockquote>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
+	cin&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d&gt;&gt;e&gt;&gt;f&gt;&gt;g&gt;&gt;h&gt;&gt;i&gt;&gt;j&gt;&gt;k&gt;&gt;l&gt;&gt;m&gt;&gt;n&gt;&gt;o&gt;&gt;p&gt;&gt;q&gt;&gt;r&gt;&gt;s&gt;&gt;t&gt;&gt;u&gt;&gt;v&gt;&gt;w&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+	cout&lt;&lt;a&lt;&lt;b&lt;&lt;c&lt;&lt;d&lt;&lt;e&lt;&lt;f&lt;&lt;g&lt;&lt;h&lt;&lt;i&lt;&lt;j&lt;&lt;k&lt;&lt;l&lt;&lt;m&lt;&lt;n&lt;&lt;o&lt;&lt;p&lt;&lt;q&lt;&lt;r&lt;&lt;s&lt;&lt;t&lt;&lt;u&lt;&lt;v&lt;&lt;w&lt;&lt;x&lt;&lt;y&lt;&lt;z;
+	return 0;
+}
+</code></pre>
+<p>好了，快停下吧，你隔壁的dalao已经发出了笑声。这才多少个？26个手都快酸了，更不要说是1000个了（更不要谈有些题目动不动几千个数据的运算）</p>
+<blockquote>
+<p>那如果需要完成这样类似的东西，我们该怎么办啊?!!!!<br>
+<strong>救救孩子吧</strong></p>
+</blockquote>
+<ul>
+<li>这时一旁的ZWT一脸姨母笑地走了过来，笑嘻嘻地走向了你————————旁边漂亮的女同学讲了起来：“这个啊，需要一种新的东西——数组来解决的，来我来教你。”（咳咳咳，还是我来给大家说吧，<s>毕竟同性才是真爱</s>，ZWT大佬这种是个例外）那我们开始吧。</li>
+</ul>
+<hr>
+<p><strong>数组</strong></p>
+<ul>
+<li>我们先来解决之前的问题吧：储存1000个数字，并且可以随意调用其中的一个。</li>
+<li>先分析：其实我们只需要解决两个问题<br>
+1.如何简便定义1000个变量<br>
+2.如何简便读入1000个变量（键入没有办法，当然你也可以使用文件操作在一个txt文档里放1000个数据，这个有时间就说一说）</li>
+</ul>
+<p>那么其实第二个问题在第一个问题解决的情况下并不是很难，只要找到规律用<code>for</code>or<code>while</code>循环就行了。</p>
+<ul>
+<li>老规矩先给代码然后一条条改写：</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std
+int main()
+{
+	int a[999];
+	for(int i=0;i&lt;=999;++i)
+	    cin&gt;&gt;a[i];
+	cout&lt;&lt;a[572];
+	return 0;
+}
+</code></pre>
+<p>这个就不给效果图了。（数据手打太麻烦，文件操作讲不到，而且也不直观）</p>
+<ul>
+<li>那我们就用5个数就行了：</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a[5],n;//a[n]储存数据，n从键盘读入数据 
+	cout&lt;&lt;&quot;What number you want to Putin&quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin = &quot;;//输入提示 
+	for(int i=0;i&lt;=5;++i)//for循环读入数据放入数组a 
+	    cin&gt;&gt;a[i];//读入语句 
+	cout&lt;&lt;&quot;Which number you want to Putout &quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin n = &quot;;//输入提示 
+	cin&gt;&gt;n;
+	cout&lt;&lt;&quot;a[n] = &quot;&lt;&lt;a[n-1]&lt;&lt;endl;//输出查询结果 
+	return 0;
+}
+</code></pre>
+<p>我们先规定5个数是有顺序的：<code>2 4 6 8 1</code><br>
+然后运行程序将这5个数输入进去：<br>
+<img src="https://iimg.com.cn/p/d07f2378ad5f0.png" alt="" loading="lazy"><br>
+我们以及输入了5个数啊，为什么不继续？<br>
+这里是有一个找打的错误！！！！</p>
+<pre><code class="language-C++">for(int i = 0 ; i &lt;=5 ; ++i )
+</code></pre>
+<p>看清楚了，这个是从1到5一共是6次的循环！！！！！</p>
+<ul>
+<li>改正方式：<strong>(注意各种改正方式最后调用的区别，后面会有讲解)</strong><br>
+1.在对<code>i</code>赋初值处将初值设置为1</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a[5],n;//a[n]储存数据，n从键盘读入数据 
+	cout&lt;&lt;&quot;What number you want to Putin&quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin = &quot;;//输入提示 
+	for(int i=1;i&lt;=5;++i)//for循环读入数据放入数组a 
+	    cin&gt;&gt;a[i];//读入语句 
+	cout&lt;&lt;&quot;Which number you want to Putout &quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin n = &quot;;//输入提示 
+	cin&gt;&gt;n;
+	cout&lt;&lt;&quot;a[n] = &quot;&lt;&lt;a[n-1]&lt;&lt;endl;//输出查询结果 
+	return 0;
+}
+</code></pre>
+<ul>
+<li>运行效果：<br>
+<img src="https://iimg.com.cn/p/90e3b14a352db.png" alt="" loading="lazy"><br>
+2.将条件判断语句中的<code>=</code>去掉</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a[5],n;//a[n]储存数据，n从键盘读入数据 
+	cout&lt;&lt;&quot;What number you want to Putin&quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin = &quot;;//输入提示 
+	for(int i=0;i&lt;5;++i)//for循环读入数据放入数组a 
+	    cin&gt;&gt;a[i];//读入语句 
+	cout&lt;&lt;&quot;Which number you want to Putout &quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin n = &quot;;//输入提示 
+	cin&gt;&gt;n;
+	cout&lt;&lt;&quot;a[n] = &quot;&lt;&lt;a[n]&lt;&lt;endl;//输出查询结果 
+	return 0;
+}
+</code></pre>
+<ul>
+<li>运行效果：<br>
+<img src="https://iimg.com.cn/p/90e3b14a352db.png" alt="" loading="lazy"><br>
+3.直接5改成4</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a[5],n;//a[n]储存数据，n从键盘读入数据 
+	cout&lt;&lt;&quot;What number you want to Putin&quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin = &quot;;//输入提示 
+	for(int i=0;i&lt;=4;++i)//for循环读入数据放入数组a 
+	    cin&gt;&gt;a[i];//读入语句 
+	cout&lt;&lt;&quot;Which number you want to Putout &quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin n = &quot;;//输入提示 
+	cin&gt;&gt;n;
+	cout&lt;&lt;&quot;a[n] = &quot;&lt;&lt;a[n]&lt;&lt;endl;//输出查询结果 
+	return 0;
+}
+</code></pre>
+<ul>
+<li>运行效果：<br>
+<img src="https://iimg.com.cn/p/af65ebee46611.png" alt="" loading="lazy"><br>
+这里就是这个问题的解决，我们为了后面方便就先论一论2和3（1的话出问题的表现不同）</li>
+</ul>
+<hr>
+<p>那么我们现在来调取我们储存的数据（对于第2,3种统一就调用第2个和第5个）：</p>
+<ul>
+<li>
+<p>调用第二个数据：<br>
+<img src="https://iimg.com.cn/p/cff22881ece70.jpg" alt="1.jpg" loading="lazy"></p>
+<p>似乎是没有什么问题的</p>
+</li>
+<li>
+<p>调用第五个数据：<br>
+<img src="https://iimg.com.cn/p/332d4f72754c3.jpg" alt="20190913133228.jpg" loading="lazy"></p>
+</li>
+</ul>
+<p><strong>等等！！！不对头！！！</strong><br>
+<strong>我们没有输入<code>0</code>这个数据的啊，为什么搞出来一个<code>0</code>？！<br>
+有问题的，要不去问问大佬？？？（我去了）<br>
+大佬回复到：</strong><br>
+<img src="https://iimg.com.cn/p/4ed468f89d14f.jpg" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/1cacf2a41b7d9.jpg" alt="" loading="lazy"><br>
+（开一个玩笑，大佬们还是很友善的）<br>
+好吧，我们自己想一想吧，自立根生。我们来回忆一下我们的输入顺序吧：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">输入顺序</th>
+<th style="text-align:center">一</th>
+<th style="text-align:center">二</th>
+<th style="text-align:center">三</th>
+<th style="text-align:center">四</th>
+<th style="text-align:center">五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">输入数据</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>这一看可就不得了，不仅仅是调用第五个数据出错了，就连第二个数据的调用也错了，难道是这个程序我们直接搞错了？<br>
+最后我知道了一个东西，只不过在这之前我想问大家一问题：</p>
+<blockquote>
+<p>你们是怎么数数的？</p>
+</blockquote>
+<p>一定是：1,2，3……这样的吧（说其它语言的都一样，别杠）<br>
+但是，计算机数数是这样的：0,1,2,3……（很无语……想摔键盘）<br>
+所以我们存进去的数据是这样的：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量名</th>
+<th style="text-align:center">a[0]</th>
+<th style="text-align:center">a[1]</th>
+<th style="text-align:center">a[2]</th>
+<th style="text-align:center">a[3]</th>
+<th style="text-align:center">a[4]</th>
+<th style="text-align:center">a[5]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">存储数据</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">随机数</td>
+</tr>
+</tbody>
+</table>
+<p>所以我们之前读取是有问题的。<br>
+读取第2个，实际应该调用a[1],读取第五个应该调用a[4]<br>
+所以改改就行了：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a[5],n;//a[n]储存数据，n从键盘读入数据 
+	cout&lt;&lt;&quot;What number you want to Putin&quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin = &quot;;//输入提示 
+	for(int i=0;i&lt;=4;++i)//for循环读入数据放入数组a 
+	    cin&gt;&gt;a[i];//读入语句 
+	cout&lt;&lt;&quot;Which number you want to Putout &quot;&lt;&lt;endl;//输入提示 
+	cout&lt;&lt;&quot;Putin n = &quot;;//输入提示 
+	cin&gt;&gt;n;
+	cout&lt;&lt;&quot;a[n] = &quot;&lt;&lt;a[n-1]&lt;&lt;endl;//输出查询结果 
+	return 0;
+}
+</code></pre>
+<p><code>就改一个就行了，不想写那么多，其它的就自己改，自己跑就行。</code></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/qMhOofuQ0/">
+                  <h3 class="post-title">
+                    C++入门（7）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（6） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（6）</h2>
+            <div class="post-date">2019-08-09</div>
+            
+              <div class="feature-container" style="background-image: url('https://cans518.github.io//post-images/8pCzrpH65.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>🐼Pixiv ID：44342920</p>
+<h2 id="快乐的循环结构">快乐的循环结构</h2>
+<!-- more -->
+<hr>
+<h4 id="for循环的使用">for循环的使用</h4>
+<p>首先，我们来讲一个故事吧 <s>（偷瞟一眼社长在不在）</s>。</p>
+<ul>
+<li>话说有一天，一个叫LYT的男人（某快乐社长）他喜欢玩亚索 <s>（托儿所）</s>，于是他想计算<code>E</code>100次小兵会花多少蓝。但是呢，他身边没有电脑，于是他网瘾大发 <s>(社长不敢去网吧)</s>，这时候你看见社长陷入绝境，于是你 <strong>准（jian）备（si）帮（bu）助（jiu）</strong> 他。</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://iimg.com.cn/p/daebc563d9fed.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>①现在你知道亚索第一次E会花费1点蓝量，每E一次会增加1点蓝耗。但是你觉得计算从1加到100实在是太麻烦了。怎么办？ ~~要不我们放弃他？ ~~</p>
+</blockquote>
+<blockquote>
+<p>于是你来听了这一堂IT社的课程。<strong>（并觉得血赚不亏。）</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>（IT社毕竟是学习如何用最简单的步骤得到想要的东西的地方。）</strong></p>
+</blockquote>
+<p>于是，这堂课的内容开始了。</p>
+<hr>
+<p>这里我要向大家隆重介绍<code>for</code>语句。</p>
+<figure data-type="image" tabindex="2"><img src="https://iimg.com.cn/p/05a474852635a.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int s = 0;
+	for(int i = 1; i &lt;= 100; i++)
+	{
+		s+=i;
+	}
+	cout&lt;&lt;s;
+	return 0;
+}
+</code></pre>
+<p>这个程序便是帮助社长的操作，在这个程序中，</p>
+<p><code>for()</code>中包含了三个语句，</p>
+<p>首先第一个语句<code>int i=1</code>,这个的意思是定义<code>i</code>是多少，当然这里的<code>int</code>可以省略，前提是你引用的变量在你的程序中已经定义过了。</p>
+<p>第二个语句，<code>i&lt;=100</code>这个的意思是给定<code>i</code>的范围，也就是说<code>i</code>只能在这个范围里进行计算。当然如果不写这句的话，程序将会无限制的运行下去，这样也就会导致程序崩盘。（后面我会给大家介绍几种在程序内终止循环的方法。）</p>
+<p>第三个语句，<code>i++</code>这个的意思是让<code>i</code>进行自加运算**(也就是说<code>i++</code>等价于<code>i=i+1</code>)**，这句如果不写的话，<code>i</code>的值将不会变化，当然，你可以把这句写到循环里面去。</p>
+<p>我们当然可以来对这三句进行一个定义式：<br>
+<code>for(int i = n ; i &lt;= m ; i = i +x)</code><br>
+翻译成数学语言就是：<br>
+<strong>i</strong>从<strong>n</strong>开始，每次增加<strong>x</strong>，直到<strong>i</strong> &gt; <strong>m</strong></p>
+<hr>
+<p>接下来我相信大家会有很多问题。</p>
+<p>比如：</p>
+<p>①为什么要让<code>i=1</code>，这其实只是一个习惯，你也可以让<code>i=0</code>，这也是可以的，但是在后面的程序里，有部分程序是要让<code>i=0</code>的，但是这要等到数组之后才会出现，也就不在这里讲解。</p>
+<p>②这个<code>for()</code>语句一定要加下面的括号吗？答案是否定的，如果你的语句只有一条，那么完全可以不加那个括号，但是语句一旦大于一条，那么括号必须加，不然程序中，它只会认你<code>for()</code>语句下面的一条语句，这样就会导致程序发生错误。</p>
+<p>③如何在循环内跳出。</p>
+<p>第一种方法，在你的循环里面加一个<code>break</code>，这个的意思就是跳出你当前的程序，在上面的程序中，我就使用了一个判定语句，当<code>i</code>的值是5的时候，程序结束，这样即便是<code>i</code>不加到100，程序也会停止。但是这个语句也有一个缺点，就是不能直接让程序停止。</p>
+<figure data-type="image" tabindex="3"><img src="https://iimg.com.cn/p/11732a101dc48.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int s = 0;
+	for(int i = 1; i &lt;= 100; i++)
+	{
+		s+=i;
+		if(i == 5)
+		break;
+	}
+	cout&lt;&lt;s;
+	return 0;
+}
+</code></pre>
+<p>这时候一定有人想问，你的程序不是停下来了吗？因为我这个程序很简单，只有一重循环，当如果有两重循环了，这个程序就不会停下来，而是继续进入下一个循环。</p>
+<p>这里我就要介绍另一个更加暴力的方法了，这个方法可以直接让程序完全停止下来。</p>
+<figure data-type="image" tabindex="4"><img src="https://iimg.com.cn/p/9d41ef297500a.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int s = 0;
+	for(int i = 1; i &lt;= 100; i++)
+	{
+		s+=i;
+		if(i == 5)
+		return 0;
+	}
+	cout&lt;&lt;s;
+	return 0;
+}
+</code></pre>
+<p>这就是直接加一个<code>return 0;</code>这样当循环达到你想要的结果的时候你就直接可以结束这个程序，输出你想要的值。</p>
+<p>在这里，跑程序时我们也会发现一个问题：<strong>没有输出</strong></p>
+<figure data-type="image" tabindex="5"><img src="https://iimg.com.cn/p/97ec0cb610b1c.jpg" alt="" loading="lazy"></figure>
+<p>其实这个程序在<code>retrun 0;</code>语句过后就已经结束了，后面的语句将不会被执行的。</p>
+<blockquote>
+<p>PS：<code>return 0;</code>在程序中就可以看作是结束整个程序的意思。</p>
+</blockquote>
+<p>④这个循环里面是什么语句都可以加吗？理论上来说是这样的，大部分语句都可以写到循环里面去，当然在循环里面写循环也是完全可以的。</p>
+<p>最后，谢谢大家的学习。</p>
+<p>如果有不懂的可以加本人的<strong>QQ:1259249107</strong>，所有问题本人会在周末尽全力解答，谢谢大家。</p>
+<p><strong>以上内容为IT社ZWT大佬友情提供</strong><br>
+大佬QQ：<code>1259249107</code></p>
+<hr>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/LXz340WWg/">
+                  <h3 class="post-title">
+                    C++入门（5）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

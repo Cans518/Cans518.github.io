@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（7） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（7）</h2>
+            <div class="post-date">2019-08-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://cans518.github.io//post-images/qMhOofuQ0.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>🚓Pixiv ID：42795418</p>
+<h1 id="while的循环体系">while的循环体系</h1>
+<!-- more -->
+<hr>
+<hr>
+<h1 id="while的循环体系1">while的循环体系【1】</h1>
+<blockquote>
+<p>我之前写了很多很杂的细小的但是很实用的知识点，当然如果你想快点结束基础的知识点也可以不管前面的东西~~（比赛时你会哭）~~<br>
+还有别问我为什么跳过了for循环~~（我才不会告诉你我找了人帮忙）~~</p>
+</blockquote>
+<blockquote>
+<p>那么废话不多说我们开始：</p>
+</blockquote>
+<ul>
+<li>语句格式：<br>
+1.格式1：<pre><code class="language-cpp"> while(条件表达式)
+   语句1; 
+</code></pre>
+2.格式2：<pre><code class="language-cpp">while(条件表达式)
+{ 
+   语句1;
+   语句2;
+    ………… 
+}
+</code></pre>
+<strong>这里和之前的<code>if</code>and<code>switch</code>一样需要用花括号<code>{}</code>划分势力范围，否则只有下一条语句为它的势力范围</strong><br>
+建议：<strong>所有的<code>if</code>,<code>switch</code>,<code>for</code>,<code>while</code>都明确的用<code>{}</code>分好代码块（只有一条语句也一样，或者只有一条语句的话缩进2格）</strong></li>
+<li>语句执行说明：</li>
+</ul>
+<blockquote>
+<p>1.条件表达式的值用X代替<br>
+2.若X为真，则执行while的语句块（循环体），否则离开while循环，结束while语句。<br>
+3.在执行完一遍循环体以后都会转到第一步，知道X为假。</p>
+</blockquote>
+<hr>
+<ul>
+<li>简单的运用。<br>
+<s>我又来讲骚话了：</s></li>
+</ul>
+<blockquote>
+<p>今天，小红去小茗家玩，很开森，就是买了很多东西，但是小红不想给钱，想让小茗同学给钱，所以小红就告诉了小茗同学，他也同意了，但是他有一个要求：计算1~N的和大于10000，N的最小值，小红算出来他就请客。他说道这里还露出了一个邪恶的笑容，加了一个条件：不许上网！！小红就打算写一个程序，可惜他不会，但是他有你这个聪明可爱勇敢帅气迷人的朋友，你就用刚刚看了的<code>while</code>来写个程序帮助小红打败小茗，气死小茗。</p>
+</blockquote>
+<p>我们现在只会一种循环，而且这种问题不是简单的<code>for</code>语句能够解决的，所以用<code>while</code>就会很方便：<br>
+我们只是需要两个变量：1.sum用于计算和 2.n用于计算数字和次数<br>
+<code>while</code>里面的条件表达式就只需要当和sum&lt;10000就行了。</p>
+<ul>
+<li>简单的代码：</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n=1,sum=0;
+	while(sum &lt; 10000)
+	{
+		sum += n;
+		++n;
+	}
+	cout&lt;&lt;&quot;Min=&quot;&lt;&lt;n&lt;&lt;endl;
+	return 0;
+} 
+</code></pre>
+<p>运行结果：<br>
+<img src="https://iimg.com.cn/p/995b759210a81.jpg" alt="" loading="lazy"><br>
+<strong>解释</strong>：</p>
+<blockquote>
+<p>1.<code>sum += n</code> 中<code>+=</code>是一种二目运算符<code>sum += n</code> = <code>sum = sum+n</code><br>
+2.<code>++n</code>中<code>++</code>也是一种二目运算符<code>++n</code> = <code>n=n+1</code><br>
+3.在进行<strong>累加</strong>的时候变量必须<strong>赋初值为0</strong>，<strong>累乘</strong>的变量必须<strong>赋初值为1</strong></p>
+</blockquote>
+<hr>
+<h1 id="while的循环体系2">while的循环体系【2】</h1>
+<blockquote>
+<p>我们之前的while是用结果来限制循环次数的，那么问题来了：1.如何准确的控制循环次数  2. 如何搞定死循环</p>
+</blockquote>
+<p>我们可以慢慢来聊。</p>
+<hr>
+<h3 id="准确的控制循环次数">准确的控制循环次数</h3>
+<blockquote>
+<p>这一点呢，在<code>for</code>的循环中很容易达到，但是<code>while</code>语句中却有一点点的麻烦，一般遇到有确定的循环次数一般用<code>for</code>但是我们这是在学习所以用<code>while</code>准确控制循环次数也需要掌握。</p>
+</blockquote>
+<ul>
+<li>分析：<br>
+1.我们需要用一个计数器来记录我们的循环次数。<br>
+2.这个计数器在while语句的条件语句中有决定性的作用。<br>
+3.计数器需要自动加减。</li>
+</ul>
+<blockquote>
+<p>我们就输入一个[int]n,输出n个“这是第n次输出”</p>
+</blockquote>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n,x;
+	/*限制条件n， 
+	计数器x*/ 
+	cin&gt;&gt;n;
+	while(x &lt;= n)
+	{
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;x&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作printf(&quot;这是第%d次输出\n&quot;,x);
+		x++;
+	} 
+	return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://iimg.com.cn/p/76673cb4ad7e9.png" alt="" loading="lazy"></figure>
+<p>等等！！什么玩意？没有输出？</p>
+<p>这是一个非常经典的错误程序，计数器没有初始化，导致计数器被编译器赋了一些奇奇怪怪的值，至于这个值是多少自己可以看的，只需要调试一下：<br>
+<img src="https://iimg.com.cn/p/98b8245c2e815.png" alt="" loading="lazy"><br>
+看看吧，在定义一个变量以后会被编译器赋一些奇奇怪怪的值，而且一般都很大，所以计数器都需要初始化为0或1。</p>
+<p>改正后：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n,x=0;
+	/*限制条件n， 
+	计数器x*/ 
+	cin&gt;&gt;n;
+	while(x &lt;= n)
+	{
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;x&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作printf(&quot;这是第%d次输出\n&quot;,x);
+		x++;
+	} 
+	return 0;
+}
+</code></pre>
+<p><img src="https://iimg.com.cn/p/334ce64eaf55a.jpg" alt="" loading="lazy"><br>
+很不高兴的是为什么还有第0次，我们要解决它：<br>
+可以有两种方法：<br>
+1.在循环题使用X之前就自加：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n,x;
+	/*限制条件n， 
+	计数器x*/ 
+	cin&gt;&gt;n;
+	while(x &lt;= n)
+	{
+		x++;
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;x&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作 printf(&quot;这是第%d次输出\n&quot;,x);
+	} 
+	return 0;
+}
+</code></pre>
+<p><img src="https://iimg.com.cn/p/36f95d664899d.jpg" alt="" loading="lazy"><br>
+2.在计数器的初始化的时候令X=1</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n,x=1;
+	/*限制条件n， 
+	计数器x*/ 
+	cin&gt;&gt;n;
+	while(x &lt;= n)
+	{
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;x&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作 printf(&quot;这是第%d次输出\n&quot;,x);
+		x++;
+	} 
+	return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://iimg.com.cn/p/b32656414d20e.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>到这里我们就搞定了使用<code>while</code>准确控制循环次数。<br>
+<strong>Next Turn</strong></li>
+</ul>
+<hr>
+<h3 id="死循环">死循环</h3>
+<blockquote>
+<p>~~这应该是我最喜欢在信息技术课上向教师机发的东西了，只要你知道教师上几个大文件路径死循环调用就行了。~~这可千万别让我的老师知道。</p>
+</blockquote>
+<blockquote>
+<p>言归正传，死循环在很多时候是很有用的，比如：<s>你要烧一台电脑</s> 你要做一个循环播放的功能。但是在竞赛中基本用不上，基于求知的原则我们还是看了吧。</p>
+</blockquote>
+<blockquote>
+<p>别给我讲很多地方需要<code>for</code>的死循环，这都是可以用<code>while</code>来解决的。</p>
+</blockquote>
+<p>我们想一想如何让<code>while</code>语句一直执行呢？那就让<code>while</code>的条件表达式一直为真不就好了？那么有下面几种方式让条件表达式一直为真：</p>
+<ol>
+<li>让一个数初值为1，当大于0时循环，并在每次循环后加一：</li>
+</ol>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+    unsigned int n=1; 
+	while(n &gt; 0)
+	{
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;n&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作 printf(&quot;这是第%d次输出\n&quot;,x);
+		n++;
+	} 
+	return 0;
+}
+</code></pre>
+<p><img src="https://iimg.com.cn/p/12fdf1d980578.jpg" alt="" loading="lazy"><br>
+2. 直接在条件表达式输入为一个非零的数（C++中非零为真）</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+int main()
+{
+    int n=1; 
+	while(1)
+	{
+		cout&lt;&lt;&quot;这是第&quot;&lt;&lt;n&lt;&lt;&quot;次输出&quot;&lt;&lt;endl; 
+		// 也可以写作 printf(&quot;这是第%d次输出\n&quot;,x);
+		n++;
+	} 
+	return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://iimg.com.cn/p/b7f6db5ff1d8d.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>肯定还有更多的方法，但是个人建议使用第二种方法，更加的简洁。</p>
+</blockquote>
+<hr>
+<p><strong>The End</strong></p>
+<hr>
+<h1 id="循环的嵌套">循环的嵌套</h1>
+<ul>
+<li>终于要结束这该死的循环了，是不是很兴奋？先兴奋一下吧~~（我才不会告诉你前面只是最简单的）~~只不过既然决定了要学就坚持吧。<br>
+那么就结束现在的循环阶段吧。</li>
+</ul>
+<blockquote>
+<p>开心吧。哈哈哈哈废话就属我最多了吧。 <sub>千万别介意我话多啊</sub></p>
+</blockquote>
+<blockquote>
+<p>之前的选择嵌套我选择了0，（看不懂自己反省）毕竟我搞这个也只有10个人（觉得人多的也去反省），而且其它人也只搞了<code>for</code><s>（截至这篇完都还没有给我，2019.8.7 16:26）</s></p>
+</blockquote>
+<p>算了，算了直接开始了，要不我就成水鬼了。</p>
+<hr>
+<blockquote>
+<p>循环嵌套从字面上理解就是一个循环套上一个循环，就是这么简单。emmm……大概是这样的：</p>
+</blockquote>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int n=0;//计数器——记下输出次数 
+	//循环嵌套结构 
+	for(int i=0; i&lt;10 ;++i)//第一层循环 
+	{
+		for(int j=0; j&lt;10 ;++j)//第二层循环 
+		{
+			++n;//每一次输出时，计数器加1 
+			cout&lt;&lt;n&lt;&lt;&quot;-&quot;&lt;&lt;&quot;I am so cute&quot;&lt;&lt;endl;//进行不要脸地输出 
+		}
+	}
+	return 0;
+}
+</code></pre>
+<p><code>没有注释的看不懂的自己去写会儿作业</code><br>
+忽视我的输出内容<br>
+就是两层10次循环的嵌套 ，得到的次数就应该是<code>10*10=100</code>次了，至于到底对不对，我看把它跑起来就知道了。<br>
+<img src="https://iimg.com.cn/p/bdaa8c46610a3.jpg" alt="" loading="lazy"><br>
+可以看到我们跑了100次出来，<s>（忽略我的截图不完整）</s><br>
+这就是很简单的一个循环</p>
+<hr>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/8pCzrpH65/">
+                  <h3 class="post-title">
+                    C++入门（6）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

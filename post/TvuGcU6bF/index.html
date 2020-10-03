@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（4） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（4）</h2>
+            <div class="post-date">2019-08-07</div>
+            
+              <div class="feature-container" style="background-image: url('https://cans518.github.io//post-images/TvuGcU6bF.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>🏥Pixiv ID：66094121</p>
+<h1 id="程序的控制结构">程序的控制结构</h1>
+<!-- more -->
+<hr>
+<h1 id="程序的控制结构11">程序的控制结构【1.1】</h1>
+<h2 id="选择结构语句if一家亲">选择结构语句（<code>if</code>一家亲）：</h2>
+<ul>
+<li><strong>引：</strong></li>
+</ul>
+<blockquote>
+<p>我们之前的程序都是由上至下一条一条的执行的（老老实实，规规矩矩），讲真的太无趣了，我们在C++中有没有更加好玩，可玩性更高的一些语法结构呢？</p>
+<blockquote>
+<p>答案是——当然有！！！一定有的！！！！那就是我们今天要攻占的那个山头！！<strong><s>占山为王</s></strong></p>
+<blockquote>
+<p>需要掌握的就只有两种<code>if</code>(双分支选择)and<code>switch</code>(多项选择)当然one by one ；</p>
+<blockquote>
+<ol>
+<li><code>if</code>   2.<code>switch</code></li>
+</ol>
+<blockquote>
+<p><s>引用嵌套真好玩！！！</s>-</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong><code>if</code>语句</strong>（走上暴力不归路）<br>
+<img src="https://iimg.com.cn/p/03d1e067efba3.jpg" alt="" loading="lazy"></p>
+<ul>
+<li><strong>格式1:</strong><pre><code class="language-C++">if(条件表达语句)  //结果为真就执行，结果为假就跳过~~无视~~             
+           语句1：               
+</code></pre>
+<code>格式中的条件表达语句必须使用圆括号括起来</code></li>
+<li><strong>格式2：</strong></li>
+</ul>
+<pre><code class="language-C++">if(条件表达式)
+  {
+       语句1；
+       语句2；
+       ………… 
+   }
+ ```
+</code></pre>
+<p>例题（小茗同学又来了）：</p>
+<blockquote>
+<p>今天小茗同学在写作业的时候写到了一道题：判断一个数a是否为偶数，真则输出“Yes”</p>
+</blockquote>
+<ul>
+<li>这就是一个判断就行了</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a%2 == 0)
+	｛
+	      cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+	｝
+	return 0;
+}
+</code></pre>
+<p>在这里加不加花括号结果一样：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a%2 == 0)
+	  cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p><code>关系运算符为 == 而不能写成 = ，因为=是赋值运算符</code><br>
+<code>建议在花括号内最好缩进两个字节，注意对齐，方便阅读</code></p>
+<p>效果一样没有区别！<br>
+<img src="https://iimg.com.cn/p/3924e06509cc0.jpg" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/240bce48436fc.jpg" alt="" loading="lazy"><br>
+至于为何会这样，往下看吧~~（有可能不想看了？）~~</p>
+<ul>
+<li>其实我们只用改动一个地方就可以判断不是偶数，输出“No”</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a%2 != 0) //条件
+	  {
+               cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+          }
+	return 0;C++
+}
+</code></pre>
+<p><code>!= 为不等于</code><br>
+再继续往下看之前我们先来练习一下：</p>
+<blockquote>
+<p>输入a,b,c三个整数保证数据在<code>int</code>内，请找出其中的最大值并输出。</p>
+</blockquote>
+<p>输入(一行三个整数)：</p>
+<pre><code class="language-C++">4 8 9
+</code></pre>
+<p>输出（两行每行三个整数）：</p>
+<pre><code class="language-C++">9
+</code></pre>
+<p>其实思路很简单（只有三个数）：<br>
+1.找出最大值<br>
+2.找出最小值<br>
+3.输出<br>
+<code>下面是一个做法无比复杂的代码</code></p>
+<pre><code class="language-C++">
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int a,b,c; //首先定义三个变量来储存读进来的值
+	int max;//分别用一个变量max来储存我们找到的最大值
+	cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;//读入这三个数
+	if(a&gt;b&amp;&amp;a&gt;c)//判断a是否大于其它
+	   max=a;
+	if(b&gt;a&amp;&amp;b&gt;c)//判断b是否大于其它两个数 
+	   max=b;
+	if(c&gt;a&amp;&amp;c&gt;b)//判断c是否大于其它两个数 
+	   max=c; 
+	cout&lt;&lt;&quot;MAX=&quot;&lt;&lt;max&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p>跑跑出奇迹了：<br>
+<img src="https://iimg.com.cn/p/201b6e2acd044.jpg" alt="" loading="lazy"><br>
+那我们能不能在一个程序当中就完成输出“Yes”和“No”呢，当然可以<br>
+那就是下面的了：</p>
+<h3 id="if-else语句"><code>if-else</code>语句</h3>
+<p>写完这个就去锤爆小茗：</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if((a%2) == 0)
+	{
+		cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+	} 
+	else 
+	{
+		cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+	}
+	return 0;
+}
+</code></pre>
+<p>上手试一试效果：<br>
+<img src="https://iimg.com.cn/p/44d39303816f7.jpg" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://iimg.com.cn/p/dc9378b10d6f3.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>基础格式：</li>
+</ul>
+<pre><code class="language-C++">if(条件表达式)
+{
+	    语句1； 
+ } 
+ else
+ {
+ 	     语句2； 
+  } 
+</code></pre>
+<ul>
+<li>白话文翻译：</li>
+</ul>
+<blockquote>
+<p>当条件表达式被满足时，就执行语句1；如果不满足则执行语句2.</p>
+</blockquote>
+<p>你以为就完了？不可能！！<br>
+还有一个坑还没有填：<br>
+<strong>花括号：</strong><br>
+如果没有花括号编译器只会认为下一条语句是受<code>if</code>这个大哥管的，其它的<code>if</code>就没有权利去管了，所以这个花括号就像是各个 social man 划分势力范围一样的，乱分就要出问题，我们可以来告一哈不加的后果。</p>
+<blockquote>
+<p>这个就不设置题目了，直接上需求：从键盘读入一个整数a，如果a&gt;10则输出“a&gt;10”和“a=a+5”,否则则输出“a&lt;=10”和“a=a-5”</p>
+</blockquote>
+<ul>
+<li>有花括号的：</li>
+</ul>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a&gt;10)
+	{
+		cout&lt;&lt;&quot;a &gt; 10&quot;&lt;&lt;endl;
+		cout&lt;&lt;&quot;a + 5 = &quot;&lt;&lt;a+5&lt;&lt;endl;
+	}
+	else
+	{
+		cout&lt;&lt;&quot;a &lt;= 10&quot;&lt;&lt;endl;
+		cout&lt;&lt;&quot;a - 5 = &quot;&lt;&lt;a-5&lt;&lt;endl;
+	}
+	return 0;
+}
+</code></pre>
+<p>这次的运行结果：<br>
+<img src="https://iimg.com.cn/p/50e0ad09b53db.jpg" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/84e1256f539e7.jpg" alt="" loading="lazy"></p>
+<ul>
+<li>那么看看不加花括号的代码和效果：</li>
+</ul>
+<pre><code class="language-C++"> #include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a&gt;10)
+		cout&lt;&lt;&quot;a &gt; 10&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;a + 5 = &quot;&lt;&lt;a+5&lt;&lt;endl;
+	
+	else
+	
+		cout&lt;&lt;&quot;a &lt;= 10&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;a - 5 = &quot;&lt;&lt;a-5&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p>有趣的是，在我们进行编译的时候就会像下面一样：<br>
+<img src="https://iimg.com.cn/p/d0e64cde8b416.jpg" alt="" loading="lazy"><br>
+这里出错的原因是——难道是<s>编译器太傻了，看不懂</s>  不，你是太傻编译器在保护你（<s>以免被大佬嘲笑</s>）</p>
+<blockquote>
+<p>其实编译器就像是一个掌权者管理着你写的代码和二进制代码的秩序性，你不把你的代码的势力范围划分好，编译器是不会放你的代码这个不安定因素进到二进制代码的王国的，这个<code>else</code>不认识<code>if</code>就是两个兄弟因为一个没有分清楚的女朋友而恩断义绝了，<s>当然你也可以理解为这就像是你和学习之间有了第三者——假期，从此与学习形同陌路了。</s></p>
+</blockquote>
+<p>那我们让<code>if</code>和<code>else</code>这两兄弟冰释前嫌吧：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a;
+	cin&gt;&gt;a;
+	if(a&gt;10)
+	{
+		cout&lt;&lt;&quot;a &gt; 10&quot;&lt;&lt;endl;
+	    cout&lt;&lt;&quot;a + 5 = &quot;&lt;&lt;a+5&lt;&lt;endl;
+    }
+	else
+		cout&lt;&lt;&quot;a &lt;= 10&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;a - 5 = &quot;&lt;&lt;a-5&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p><code>这样就可以完美的编译了</code></p>
+<ul>
+<li>在<code>a&lt;=10</code>的时候输出不变：<br>
+<img src="https://iimg.com.cn/p/d4e42887c9420.jpg" alt="" loading="lazy"></li>
+<li>但是到了这个势力纠纷区域<code>a&gt;10</code>时就出现纠纷了：<br>
+<img src="https://iimg.com.cn/p/0f129b47a2489.jpg" alt="" loading="lazy"><br>
+这里按照我们设想的那样当a&gt;10时是只有两个输出的，但是为什么第14行<code>cout&lt;&lt;&quot;a - 5 = &quot;&lt;&lt;a-5&lt;&lt;endl;</code>依旧被执行了？<br>
+那就是你自己在划分的时候把14行划分成了公共区域，是<code>if</code>和<code>else</code>的共同利益，但是我们只是想把他划分给<code>else</code>就是没有加花括号的问题了。</li>
+</ul>
+<hr>
+<p>那么就说这么多了，可以尝试做做题了：</p>
+<ul>
+<li>
+<p>洛谷：</p>
+<ul>
+<li><a href="https://www.luogu.org/problemnew/show/P1425">小鱼游泳</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int a,b,c,d;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d;
+    int x=c-a,y=d-b;
+    if(y&lt;0)
+    {
+        x--;
+        y+=60;
+    }
+    cout&lt;&lt;x&lt;&lt;&quot; &quot;&lt;&lt;y&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p><a href="https://www.luogu.org/problemnew/show/P1421">小玉买文具</a></p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std; 
+int main()
+{
+    int a,b,c;
+    cin&gt;&gt;a&gt;&gt;b;
+    c=a*10+b;
+    cout&lt;&lt;c/19&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p><a href="https://www.luogu.org/problemnew/show/P1422">小玉家的电费</a></p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+using namespace std;
+int main()
+{
+    int a;
+    cin&gt;&gt;a;
+    if(a&lt;=150)
+    {cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt; a*0.4463&lt;&lt;endl;}
+    if(150&lt;a&amp;&amp;a&lt;=400)
+     {cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;a*0.4663-3&lt;&lt;endl;}
+    if(a&gt;400)
+    {cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;a*0.5663-43&lt;&lt;endl;}
+    return 0;
+ } 
+</code></pre>
+<p>这里需要解释的就是<code>setprecision(x)</code>就是C++输出的格式控制，控制数据的有效位数，在前面加上<code>fixed</code>后就是限制输出的小数位数了，<br>
+对了。TA们都在<code>iomanip</code>内，调用他们需要<code>#include&lt;iomanip&gt;</code><br>
+为了方便其实在竞赛中常用的是C语言中的<code>printf(&quot;%d.x&quot;,a)</code> 就行了更方便更快速，只需要<code>#include&lt;cstdio&gt;</code><br>
+还有很多的题目可以慢慢去做，这里就写这么多了。<br>
+<strong>The End</strong></p>
+<hr>
+<h1 id="程序的控制结构12">程序的控制结构【1.2】</h1>
+<h2 id="switch语句的开心时光">switch语句的开心时光：</h2>
+<blockquote>
+<p>有了上一篇的快乐想都不想，今天一定是<code>switch</code>的天下，废话不多说直接开始了：</p>
+</blockquote>
+<blockquote>
+<p><code>switch</code>被称为<strong>多项选择语句</strong>，而且<code>switch</code>直接翻译过来被翻译为：<strong>开关</strong>，其实可以把TA看作一个有多个档位的遥控开关，每一个档位干不同的事情。</p>
+</blockquote>
+<ul>
+<li>基本语句格式：<br>
+<strong>格式：</strong></li>
+</ul>
+<pre><code class="language-C++">switch(条件表达式)
+{
+	case 常量表达式:
+		 执行语句；
+		 break; 
+	case 常量表达式:
+		 执行语句；
+		 break;
+	……
+     default:
+          执行语句：
+          break；
+} 
+</code></pre>
+<p>来一下简单的说明<br>
+1.<code>break</code>是指停止执行该程序块后面的语句，是为了防止在后面再有满足条件的选项而加上的语句；<br>
+2.<code>case</code>中文翻译为<strong>事件</strong>也就是表达式所代表的常量的值应该满足的值；<br>
+3.<code>default</code>翻译为<strong>不履行责任</strong>效果就是当以上所有条件都不满足时，无论结果如何都要执行一遍。<br>
+4.在一个 <code>switch</code>语句里，可以有多个<code>case</code>(至少2个嘛，要不和<code>if</code>有什么区别？)，但是<code>default</code>如果有的话只能有一个，这样说的话也就是不一定要有。<br>
+5.当有多条<code>case</code>语句的时候，<code>case</code>的常量值不能相同，否则会出现错误码。<br>
+6.<code>case</code>语句的顺序可以乱动，乱写都可以，没有顺序！！！混乱的！！<br>
+7.<code>default</code>语句是可以<strong>省略</strong>的，末尾可以不用加<code>break</code><br>
+8.各个<code>case</code>和<code>default</code>语句的<code>:</code>后可以加入语句，按循序执行，在有<strong>多条语句</strong>的时候不用加<strong>花括号</strong><code>{</code>和<code>}</code>了。（因为TA们有了一个老大<code>switch</code>管着，你只需要管<code>switch</code>就行了，就像集权一样，<s>[疯狂暗示]</s>,你只需要管几个人其它都是你手底下的人去管，你就是CEO~~[只是这个程序的]~~）</p>
+<ul>
+<li>程序风格：
+<ul>
+<li>风格1：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-C++">switch()
+{
+	case 1 :  XXXX ; XXXX; break;
+	case 2 :  XXXX ; XXXX; break;
+	case 3 : XXXX ; XXXX; break;
+	case 4 : XXXX ; XXXX; break;
+	default : XXXX ; XXXX; break;
+}
+</code></pre>
+<ul>
+<li>风格2：</li>
+</ul>
+<pre><code class="language-C++">switch()
+{
+	case 1: 
+	         XXXX; 
+			 XXXX; 
+			 break;
+	case 2: 
+	         XXXX; 
+			 XXXX; 
+			 break;
+	case 3: 
+	         XXXX; 
+			 XXXX; 
+			 break;
+	case 4: 
+	         XXXX; 
+			 XXXX; 
+			 break;
+	default: 
+	         XXXX; 
+			 XXXX; 
+			 break;
+}
+</code></pre>
+<p><code>两种风格效果是一样的，没有什么区别</code><br>
+下面就是练手题</p>
+<hr>
+<blockquote>
+<p>从键盘读入1~7的数字，输出其对应的星期几的英文 <s>（不会拼单词的直接打死）</s><br>
+算了还是打出来吧，<s>（打死我也不会告诉你我忘了）</s></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">中文</th>
+<th style="text-align:center">翻译</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">星期一</td>
+<td style="text-align:center">Monday</td>
+<td style="text-align:center">Mon.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期二</td>
+<td style="text-align:center">Tuesday</td>
+<td style="text-align:center">Tues.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期三</td>
+<td style="text-align:center">Wednesday</td>
+<td style="text-align:center">Wed.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期四</td>
+<td style="text-align:center">Thursday</td>
+<td style="text-align:center">Thur.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期五</td>
+<td style="text-align:center">Friday</td>
+<td style="text-align:center">Fri.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期六</td>
+<td style="text-align:center">Saturday</td>
+<td style="text-align:center">Sat.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期日</td>
+<td style="text-align:center">Sunday</td>
+<td style="text-align:center">Sun.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>第一次用Markdown打表，你看我对你多好连第一次都给你们做了解释</code></strong><br>
+当然我们可以用<code>if</code>多次嵌套，然后告诉的老师你套了7层<code>if</code>，绝对会被表扬的~~（骂不死你）~~<br>
+为了方便打，少打点字：我就上缩写了：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int n;
+	cin&gt;&gt;n;
+	switch (n)
+	{
+		case 1: cout&lt;&lt;&quot;Mon.&quot;&lt;&lt;endl;break;
+		case 2: cout&lt;&lt;&quot;Tues.&quot;&lt;&lt;endl;break;
+		case 3: cout&lt;&lt;&quot;Wed.&quot;&lt;&lt;endl;break;
+		case 4: cout&lt;&lt;&quot;Thur.&quot;&lt;&lt;endl;break;
+		case 5: cout&lt;&lt;&quot;Fri.&quot;&lt;&lt;endl;break;
+		case 6: cout&lt;&lt;&quot;Fri.&quot;&lt;&lt;endl;break;
+		case 7: cout&lt;&lt;&quot;Sun.&quot;&lt;&lt;endl;break;
+		default : cout&lt;&lt;&quot;Not Found&quot;&lt;&lt;endl;break;
+	}
+	return 0; 
+}
+</code></pre>
+<p>完全实现了我们想要的功能，最后一条可以不加的</p>
+<hr>
+<p><strong>重点：</strong><br>
+下面就是在写题的过程中要注意的一个东西了</p>
+<ul>
+<li>
+<p>在<code>if</code>和<code>switch</code>中的取舍：</p>
+<p>-区别：</p>
+</li>
+</ul>
+<blockquote>
+<p><code>if</code>比较中规中矩，会一条一条的向下执行，直到条件满足，执行完函数体就结束；基本if选择结构： 处理单一或组合条件的情况<br>
+if-else选择结构：处理简单的条件分支情况<br>
+多重if选择结构：处理复杂的条件分支情况<br>
+嵌套if选择结构：用于较为复杂的流程控制<br>
+<code>if</code>表达式的返回值为bool</p>
+</blockquote>
+<blockquote>
+<p><code>switch</code>分俩种情况<br>
+1.当case语句数量&lt;4 时，效率上和if语句基本一样<br>
+2.当case语句数量&gt;=4时，case会有一个跳转表，存储着每个case和对应的跳转体的地址，效率明显比if效率高。</p>
+</blockquote>
+<hr>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/cjing-sai-3/">
+                  <h3 class="post-title">
+                    C++入门（3）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

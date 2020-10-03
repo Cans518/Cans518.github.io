@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Markdown简单入门 | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Markdown简单入门</h2>
+            <div class="post-date">2019-08-23</div>
+            
+              <div class="feature-container" style="background-image: url('https://i.loli.net/2019/08/23/a23ezAliZDp9dgG.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>⛄️Pixiv ID：64870692</p>
+<hr>
+<h1 id="markdown简单入门操作">Markdown简单入门操作</h1>
+<h3 id="环境需求">环境需求：</h3>
+<p>我们需要一些Markdown的编译器：</p>
+<ul>
+<li>线上：<br>
+1.<a href="https://www.jianshu.com/">简书</a><br>
+2.<a href="https://www.csdn.net/">CSDN</a><br>
+3.<a href="https://c.runoob.com/front-end/712">在线Makdown编译器</a><br>
+4.<a href="https://note.youdao.com/web/">有道云笔记网页版</a></li>
+<li>本地：<br>
+1.有道云笔记<br>
+2.……很多了可以去知乎看看，不好推荐，各有千秋<br>
+3.<s>（Typora 编辑器就很不错）</s></li>
+</ul>
+<hr>
+<p>主要是一些常用的语法了。</p>
+<h5 id="看看简介">看看简介？</h5>
+<p><sub>以下文字来自百度百科</sub></p>
+<blockquote>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>
+Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如<a href="https://baike.baidu.com/item/LaTeX">LaTeX</a>，<a href="https://baike.baidu.com/item/Docbook">Docbook</a>。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<a href="https://baike.baidu.com/item/Pandoc">Pandoc</a>；要么基于网站，如<a href="https://baike.baidu.com/item/GitHub">GitHub</a>和<a href="https://baike.baidu.com/item/Wikipedia">Wikipedia</a>，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
+</blockquote>
+<hr>
+<p>###语法略读<br>
+在Markdown之中实现同一种功能可以有很多种实现方法，但是我们最好还是掌握一种就好，贪多嚼不烂。</p>
+<h4 id="标题">标题：</h4>
+<blockquote>
+<p>一般使用#来表明标题,#的多少决定大小。</p>
+<blockquote>
+<p><code># 一号标题</code><br>
+<code>##二号标题</code><br>
+<code>###三号标题</code><br>
+<code>####四号标题</code><br>
+<code>#####五号标题</code><br>
+<code>######六号标题</code></p>
+</blockquote>
+</blockquote>
+<p>效果：</p>
+<h1 id="一号标题">一号标题</h1>
+<h2 id="二号标题">二号标题</h2>
+<h3 id="三号标题">三号标题</h3>
+<h4 id="四号标题">四号标题</h4>
+<h5 id="五号标题">五号标题</h5>
+<h6 id="六号标题">六号标题</h6>
+<p><strong>序号与大小成反比</strong><br>
+既然是要入门那就要有全套的，在Markdown里还有一种写法可以表示标题只不过只能表示一二号标题：</p>
+<ul>
+<li>一号标题：<br>
+<code>一号标题</code><br>
+<code>=======</code></li>
+</ul>
+<h1 id="一号标题-2">一号标题</h1>
+<ul>
+<li>二号标题：<br>
+<code>二号标题</code><br>
+<code>-------------</code></li>
+</ul>
+<h2 id="二号标题-2">二号标题</h2>
+<p>其中第二行的符号个数随意，<s>（我才不会告诉你一个就够了）</s></p>
+<hr>
+<h4 id="段落格式以及字体">段落格式以及字体</h4>
+<blockquote>
+<p>在Markdown中字体大小基本是固定的，就不要挣扎了，字体颜色倒是可以兼容HTML，但是不是所有的编辑器的支持，文字高光也是同理。所以在这样就不会过多地去谈这些问题，有兴趣的可以自己再去看一看教程~~（有这个时间直接看HTML不就好了）~~</p>
+</blockquote>
+<ul>
+<li>段落<br>
+Markdown中的段落并没有特殊的语法，直接写段落或者直接换行就行没有什么问题。</li>
+<li>字体</li>
+</ul>
+<blockquote>
+<p>其实在所有Markdown编辑器通用的字体也就两种但是常用的却是有三种这让我非常的苦恼，纠结是都写还是只写两个，算了，看心情吧。</p>
+</blockquote>
+<ul>
+<li>还是三种吧：<br>
+1.斜体：<br>
+<code>*斜体*</code> 或者<code>_斜体_</code>      <em>斜体</em><br>
+2.粗体：<br>
+<code>**粗体**</code> 或者<code>__粗体__</code>    <strong>粗体</strong><br>
+3.文字高光：<br>
+<code>==高光==</code></li>
+<li>分割线：<br>
+<code>***</code>(三个或者以上)</li>
+</ul>
+<hr>
+<ul>
+<li>删除线（我的最爱）：<br>
+<code>~~删除线~~</code>   <s>删除线</s></li>
+</ul>
+<p>下划线和脚注除了写文章实用对于写笔记并没有多大的用处而且下划线的语法是借助HTML的标签来完成的打字的效率会有所下降就不去说了。</p>
+<hr>
+<h4 id="列表">列表</h4>
+<ul>
+<li>
+<p>无序列表：<br>
+用<code>-</code>,<code>+</code>,<code>-</code>和<code>*</code>标记<br>
+需要换行，在标记后需要一个空格<br>
+<code>- 无序列表</code>  <code>+ 无序列表</code>  <code>- 无序列表</code>  <code>* 无序列表</code></p>
+</li>
+<li>
+<p>无序列表<br>
+可以有缩进（只是需要两个空格）：</p>
+</li>
+<li>
+<p>无序1</p>
+<ul>
+<li>无序1.1</li>
+</ul>
+</li>
+<li>
+<p>有序列表：<br>
+直接<code>1.</code> <code>2.</code> 就可以了。</p>
+</li>
+</ul>
+<hr>
+<h4 id="超链接以及图片">超链接以及图片</h4>
+<ul>
+<li>超链接：<br>
+基本格式：</li>
+</ul>
+<pre><code>[显示文本](超链接地址) //如果没有显示文本就看不见
+</code></pre>
+<p><code>放链接而不想写文字的直接上地址就行</code><br>
+<a href="https://cans518.github.io">Lreaning Blog</a><br>
+进阶格式：</p>
+<pre><code>[Lreaning Blog](1)
+[Github](2)
+1：https://cans518.github.io
+2：https://github.com
+</code></pre>
+<ul>
+<li>图片：<br>
+大多数编辑器你只需要将图片复制进去就好了<br>
+格式的话：</li>
+</ul>
+<pre><code>![文本](图片地址)//文本可以没有
+</code></pre>
+<p>图片托管到各种的图床里面就会得到一个URL地址：</p>
+<p><code>https://i.loli.net/2019/08/23/2gYhzW3GyfOxPiV.jpg</code></p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/08/23/2gYhzW3GyfOxPiV.jpg" alt="" loading="lazy"></figure>
+<hr>
+<h4 id="代码块">代码块：</h4>
+<ul>
+<li>单句代码：<br>
+如果是段落上的一个函数或片段的代码可以用反引号把它包起来(  ` ）</li>
+</ul>
+<pre><code>`单句代码`
+</code></pre>
+<p><code>单句代码</code></p>
+<ul>
+<li>代码块：<br>
+你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）：</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	cout&lt;&lt;&quot;Hello,world&quot;&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<hr>
+<h4 id="区块">区块：</h4>
+<p>Markdown 区块引用是在段落开头使用 &gt; 符号 ，然后后面紧跟一个空格符号：<br>
+<code>&gt; 引用真开心</code></p>
+<blockquote>
+<p>引用真开心</p>
+</blockquote>
+<p>区块中使用列表：</p>
+<pre><code>&gt; 1. 第一项
+&gt; 2. 第二项
+&gt; + 第一项
+&gt; + 第二项
+&gt; + 第三项
+</code></pre>
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<ul>
+<li>列表中使用区块<br>
+如果要在列表项目内放进区块，那么就需要在 &gt; 前添加四个空格的缩进。</li>
+</ul>
+<hr>
+<h4 id="表格">表格</h4>
+<p>Markdown 制作表格使用 <code>|</code> 来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。</p>
+<pre><code>|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以设置表格的对齐方式：<br>
+-: 设置内容和标题栏居右对齐。<br>
+:- 设置内容和标题栏居左对齐。<br>
+:-: 设置内容和标题栏居中对齐。</p>
+<pre><code>| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/FNwrAuQ7s/" class="tag">
+                    简单入门
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/tUYlb6fZO/" class="tag">
+                    Markdown
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

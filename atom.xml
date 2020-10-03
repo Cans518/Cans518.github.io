@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cans518.github.io/</id>
+    <title>Learning Blog</title>
+    <updated>2020-10-03T05:24:13.459Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cans518.github.io/"/>
+    <link rel="self" href="https://cans518.github.io/atom.xml"/>
+    <subtitle>一个Oler的学习笔记</subtitle>
+    <logo>https://cans518.github.io/images/avatar.png</logo>
+    <icon>https://cans518.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Learning Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[通知栏]]></title>
+        <id>https://cans518.github.io/post/tL5guefWq/</id>
+        <link href="https://cans518.github.io/post/tL5guefWq/">
+        </link>
+        <updated>2086-11-30T05:28:41.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>为了方便吧。开一个通知栏。</strong><br>
+<strong>有事情首先通知这里的！！！</strong><br>
+<strong>有问题联系QQ：<code>798061533</code>,邮箱:<code>xiemaths@gmail.com</code></strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>为了方便吧。开一个通知栏。</strong><br>
+<strong>有事情首先通知这里的！！！</strong><br>
+<strong>有问题联系QQ：<code>798061533</code>,邮箱:<code>xiemaths@gmail.com</code></strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[导读，必看！！！！！]]></title>
+        <id>https://cans518.github.io/post/dao-du-bi-kan/</id>
+        <link href="https://cans518.github.io/post/dao-du-bi-kan/">
+        </link>
+        <updated>2053-08-07T10:31:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>😉Pixiv ID: 66329595<br>
+<strong>关于博客的所有问题请先查看，保证更新速度。</strong><br>
+<strong>新来的，请移步下面的链接，阅读后再次食用博客会更美味</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>😉Pixiv ID: 66329595<br>
+<strong>关于博客的所有问题请先查看，保证更新速度。</strong><br>
+<strong>新来的，请移步下面的链接，阅读后再次食用博客会更美味</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（9）]]></title>
+        <id>https://cans518.github.io/post/9/</id>
+        <link href="https://cans518.github.io/post/9/">
+        </link>
+        <updated>2019-10-24T04:57:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>⛪️Pixiv ID: 77441301</p>
+<h1 id="the-frist-game-for-ourself">The Frist Game For Ourself</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>⛪️Pixiv ID: 77441301</p>
+<h1 id="the-frist-game-for-ourself">The Frist Game For Ourself</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（8）]]></title>
+        <id>https://cans518.github.io/post/NXvU9So0f/</id>
+        <link href="https://cans518.github.io/post/NXvU9So0f/">
+        </link>
+        <updated>2019-08-11T12:29:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>🚌Pixiv ID: 76435086</p>
+<h1 id="简单的数组">简单的数组</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🚌Pixiv ID: 76435086</p>
+<h1 id="简单的数组">简单的数组</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（7）]]></title>
+        <id>https://cans518.github.io/post/qMhOofuQ0/</id>
+        <link href="https://cans518.github.io/post/qMhOofuQ0/">
+        </link>
+        <updated>2019-08-11T12:02:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>🚓Pixiv ID：42795418</p>
+<h1 id="while的循环体系">while的循环体系</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🚓Pixiv ID：42795418</p>
+<h1 id="while的循环体系">while的循环体系</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（6）]]></title>
+        <id>https://cans518.github.io/post/8pCzrpH65/</id>
+        <link href="https://cans518.github.io/post/8pCzrpH65/">
+        </link>
+        <updated>2019-08-09T11:35:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>🐼Pixiv ID：44342920</p>
+<h2 id="快乐的循环结构">快乐的循环结构</h2>
+]]></summary>
+        <content type="html"><![CDATA[<p>🐼Pixiv ID：44342920</p>
+<h2 id="快乐的循环结构">快乐的循环结构</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（5）]]></title>
+        <id>https://cans518.github.io/post/LXz340WWg/</id>
+        <link href="https://cans518.github.io/post/LXz340WWg/">
+        </link>
+        <updated>2019-08-08T11:15:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>🐙Pixiv ID: 5313503</p>
+<h1 id="一些小的点">一些小的点</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🐙Pixiv ID: 5313503</p>
+<h1 id="一些小的点">一些小的点</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（4）]]></title>
+        <id>https://cans518.github.io/post/TvuGcU6bF/</id>
+        <link href="https://cans518.github.io/post/TvuGcU6bF/">
+        </link>
+        <updated>2019-08-07T05:12:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>🏥Pixiv ID：66094121</p>
+<h1 id="程序的控制结构">程序的控制结构</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🏥Pixiv ID：66094121</p>
+<h1 id="程序的控制结构">程序的控制结构</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（3）]]></title>
+        <id>https://cans518.github.io/post/cjing-sai-3/</id>
+        <link href="https://cans518.github.io/post/cjing-sai-3/">
+        </link>
+        <updated>2019-08-06T03:12:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>🔨Pixiv ID：66151276</p>
+<h1 id="简单的计算操作">简单的计算操作</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🔨Pixiv ID：66151276</p>
+<h1 id="简单的计算操作">简单的计算操作</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++入门（2）]]></title>
+        <id>https://cans518.github.io/post/shi/</id>
+        <link href="https://cans518.github.io/post/shi/">
+        </link>
+        <updated>2019-07-05T10:45:03.000Z</updated>
+        <summary type="html"><![CDATA[<p>🎾 Pixiv ID：72203573</p>
+<h1 id="终于开始写程序了入门程序体验">终于开始写程序了，入门程序体验</h1>
+]]></summary>
+        <content type="html"><![CDATA[<p>🎾 Pixiv ID：72203573</p>
+<h1 id="终于开始写程序了入门程序体验">终于开始写程序了，入门程序体验</h1>
+]]></content>
+    </entry>
+</feed>

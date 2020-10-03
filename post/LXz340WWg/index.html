@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（5） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（5）</h2>
+            <div class="post-date">2019-08-08</div>
+            
+              <div class="feature-container" style="background-image: url('https://cans518.github.io//post-images/LXz340WWg.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>🐙Pixiv ID: 5313503</p>
+<h1 id="一些小的点">一些小的点</h1>
+<!-- more -->
+<hr>
+<h1 id="小的点1">小的点【1】</h1>
+<blockquote>
+<p>之前的东西已经学的有一点了，但是有很多的小点子没有解决或者有许多的无法完全搞定，还有许许多多的问题，现在就从头到尾来一点点。</p>
+</blockquote>
+<h2 id="c代码中的注释">C++代码中的<strong>注释</strong></h2>
+<blockquote>
+<p>在网络上有一句话：所有的程序员都讨厌两件事，1.别人不写注释 2.自己写注释。<br>
+但是为了自己以后能够读懂自己的代码和在比赛中能够及时发现自己的错误地方还是忍一忍写了吧，也可以用注释来调试自己的代码。<br>
+<code>C++ 支持单行注释和多行注释。注释中的所有字符会被 C++ 编译器忽略。</code>这也是我们用来调试代码的一个方法。</p>
+</blockquote>
+<ul>
+<li>不加注释：<br>
+<img src="https://iimg.com.cn/p/6b2457d5dffb6.jpg" alt="" loading="lazy"></li>
+<li>加了注释后：<br>
+<img src="https://iimg.com.cn/p/1baeb37006613.jpg" alt="" loading="lazy"><br>
+一般的编译器会让注释了的语句颜色不一样都可以区分出来的。</li>
+<li>一般常用的注释语法：<br>
+语法1(单行注释)：<br>
+以 <code>//</code> 开始，直到行末为止</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	cout&lt;&lt;&quot;不被注释&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;被注释的一条&quot;&lt;&lt;endl; //这是注释
+	return 0;
+}
+</code></pre>
+<p>语法2：<br>
+以 <code>/*</code> 开始，以 <code>*/</code> 终止。(多行注释)</p>
+<pre><code class="language-C++">/*作者：Cans518
+   时间：2019.7.24
+*/
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	cout&lt;&lt;&quot;不被注释&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;被注释的一条&quot;&lt;&lt;endl; 
+	return 0;
+}
+</code></pre>
+<p><img src="https://iimg.com.cn/p/155c2c5db9715.jpg" alt="" loading="lazy"><br>
+这两种是常用的注释语法。但是还有一种，大家可以取网上取查一查。</p>
+<hr>
+<h1 id="小的点2">小的点【2】</h1>
+<p>想必大家都对信息学奥赛要求的编译器丑哭了吧，<s>（而且非常不好用）</s>，我们平时还可以用VS来代替，但时间长了上了赛场自己就会因为不习惯编译器而出错。所以我们只有看着那个界面发呆？</p>
+<ul>
+<li>
+<p>原生的：<br>
+<img src="https://iimg.com.cn/p/d7098513322d7.jpg" alt="" loading="lazy"><br>
+其实好像也是能够接受的，但是就是想自己搞一搞<br>
+我们可以对比隔壁家的<code>Visual Studio Code</code>:<br>
+<img src="https://iimg.com.cn/p/8c62f62c6c26e.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>那就开整：</p>
+<p>1.打开Dev-C++：<br>
+<img src="https://iimg.com.cn/p/7e5e7d9edf640.jpg" alt="" loading="lazy"><br>
+2.打开工具（Tools）<br>
+<img src="https://iimg.com.cn/p/7e5e7d9edf640.jpg" alt="" loading="lazy"><br>
+3.打开编译器选项（Editor Options）<br>
+<img src="https://iimg.com.cn/p/54f878950c945.jpg" alt="" loading="lazy"><br>
+3.点开语法：<br>
+<img src="https://iimg.com.cn/p/edc9c46d1e670.jpg" alt="" loading="lazy"><br>
+4.剩下的就可以为所欲为了。点击选择语句后就可以改颜色了，<br>
+如果不想动手~~（懒死你）~~，预设的几个还是不错的。<br>
+建议<strong>GSS Hacker</strong></p>
+</li>
+<li>
+<p>我自己的：<br>
+<img src="https://iimg.com.cn/p/7f34781f9abe9.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+<hr>
+<h1 id="小的点3">小的点【3】</h1>
+<h2 id="程序的调试">程序的调试</h2>
+<blockquote>
+<p>我们写完一个一个程序以后不可能就把他拿去提交~~（除非你是那种满分的大佬）~~就必须要检查，拿一组数据去尝试，如果没有问题了，就可以拿去交了，当然不可能每次都没有问题，检查？不存在检查，我就是爆零，卸载编译器都不可能检查。</p>
+<blockquote>
+<p>真香！！</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>检查我们就要检查，我这个<s>只有128MB的</s>可能检查出来吗？不可能！！！那么就只有调试了。无奈。。。。。。</p>
+</blockquote>
+<p>下面小茗同学又出来了:&quot;我会！！我会！！不就是F5吗？直接搞不就完了&quot;<br>
+脸伸过来，打不死你个XXX（三字经），你看看这样搞F5和F10有什么区别？机房的老师就只有打死你了，拿一个程序搞一搞<br>
+<sub>示例程序：</sub></p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int i = 0;
+	for(int j=1;j&lt;=9;++i)
+	i++;
+	cout&lt;&lt;i&lt;&lt;endl;
+}
+</code></pre>
+<p>你可以试一试F5和F10在没有断点的时候有没有区别<br>
+<sub>我可以告诉你，没有！！！</sub><br>
+**你想调试就先加断点！！！**F4<br>
+断点好了再按F5就可以得到：<br>
+<img src="https://iimg.com.cn/p/685e5fc3a8b0b.jpg" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/27b6db03970e7.jpg" alt="" loading="lazy"><br>
+然后想看什么就添加什么</p>
+<hr>
+<h1 id="小的点4终章">小的点【4.终章】</h1>
+<h2 id="aout-学习笔记那些事情">Aout 学习笔记那些事情：</h2>
+<blockquote>
+<p>上课笔记不好，下课学到你娃哭。</p>
+<blockquote>
+<p>这大概是我在高中混了1年多的一个真实感受了。</p>
+<blockquote>
+<p>在竞赛学习中这一点也格外的重要，因为我并不是全职的竞赛班根本抽不出大量的时间来练习和巩固只有周日一上午的练习时间了。老师在学校上课的内容只有借助自己的笔记来慢慢体会了。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>别提书面笔记，在机房你写字方便？还是你的手速写字比截屏和打字快？更别说有些资料是视频或者电子档</strong><s>（手速不够的回去练！！）</s><br>
+所以我们在电脑上记笔记是在所难免了。（同样适用于自己在线上课的学习）</p>
+<ul>
+<li><strong>最为简单和方便的</strong><br>
+工具：<br>
+1.U盘（只是装笔记的话32G够了，还要有资料的话建议！128G往上，移动硬盘也是很不错的）<br>
+2.一台Windows系统的电脑（学校机房的一般系统，当然别的也可以）<br>
+3.记事本<br>
+方法：<br>
+<img src="https://iimg.com.cn/p/9ac038adbdab2.jpg" alt="" loading="lazy"><br>
+你以为我会这样去开记事本？效率太低！而且不够炫酷！体现不出我们<s>蒻骥</s>的身份。我们有更加炫酷的操作去搞定！ <s>（秀妹子一脸）</s> 瞧瞧我这丑恶的嘴脸。<br>
+好了，其实在你在网页看课或者老师讲课的时候你这样有点慢。<br>
+看好！只有一遍：<br>
+1.Win+R:<br>
+<img src="https://iimg.com.cn/p/e7b13764cc494.png" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/44cae246f4fd9.jpg" alt="" loading="lazy"><br>
+2.然后输入<code>notepad</code>:<br>
+<img src="https://iimg.com.cn/p/ce61edb60938c.jpg" alt="" loading="lazy"><br>
+3.直接Enter：<br>
+<img src="https://iimg.com.cn/p/6404aee36ef68.jpg" alt="" loading="lazy"><br>
+就打开记事本了，我们就可以开始写笔记了，但是这记事本有个致命的缺点——排版麻烦，后期复习时主次分不清。那么有没有一个可以方便排版有不用多写太多东西的解决方法？有的——Markdown语法。关于这个我在后面会有详细的一个介绍，保证你可以用它来记笔记毫无压力。<br>
+<strong>文章连接：</strong><a href="https://cans518.github.io/post/QV3xn4XYF/">Markdown</a></li>
+</ul>
+<hr>
+<p>如果输入<code>calc</code>就可以打开Windows自带的计算器：<br>
+<img src="https://iimg.com.cn/p/6b8843c86c583.jpg" alt="" loading="lazy"><br>
+<img src="https://iimg.com.cn/p/4515a278fd09d.jpg" alt="" loading="lazy"></p>
+<hr>
+<p>有问题直接给我发邮件<code>xiemaths@gmail.com</code>或者<code>xyh798061533@163.com</code><br>
+QQ：<code>2385708107</code><br>
+ZWT大佬QQ：<code>1259249107</code><br>
+LYT大佬QQ：<code>1622956497</code><br>
+(周末统一回复，原谅高二狗的苦)</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/TvuGcU6bF/">
+                  <h3 class="post-title">
+                    C++入门（4）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

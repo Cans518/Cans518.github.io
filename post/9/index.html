@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++入门（9） | Learning Blog</title>
+<meta name="description" content="一个Oler的学习笔记">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://cans518.github.io//favicon.ico?v=1601702591604">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cans518.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146522176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146522176-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://cans518.github.io/">
+        <img src="https://cans518.github.io//images/avatar.png?v=1601702591604" class="site-logo">
+        <h1 class="site-title">Learning Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            说明
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个Oler的学习笔记
+    </div>
+    <div class="site-footer">
+      广中IT社版权所有 | <a class="rss" href="https://cans518.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C++入门（9）</h2>
+            <div class="post-date">2019-10-24</div>
+            
+              <div class="feature-container" style="background-image: url('https://iimg.com.cn/p/1fb92ab1aa119.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>⛪️Pixiv ID: 77441301</p>
+<h1 id="the-frist-game-for-ourself">The Frist Game For Ourself</h1>
+<!-- more -->
+<blockquote>
+<p>等等，这个节奏不对啊，什么时候开始飙英文了？一定是我的打开方式不对，重新来一次。</p>
+</blockquote>
+<h1 id="我们的第一个小游戏程序">我们的第一个小游戏程序</h1>
+<ul>
+<li>
+<p>我觉得你们会有一个很大很大的疑惑：“我们才学了一点点东西就开始写游戏了？怕不是在逗我们玩吧。不要拿我们开玩笑了，认真给我们讲东西吧”</p>
+</li>
+<li>
+<p>我当然没有开玩笑，我们现在当然不可能写出一个<code>3A</code>级别的大作，我们现在可以捋一捋我们这么多文章学了什么：</p>
+</li>
+</ul>
+<ol>
+<li>C++程序基本结构</li>
+<li>C++自带输出与输入语句，<code>cout</code>和<code>cin</code></li>
+<li>C++代码中实现的数据计算</li>
+<li>循环结构控制<code>for</code>和<code>while</code></li>
+<li>选择结构控制<code>if</code>和<code>switch</code></li>
+<li>利用<code>数组</code>的方式储存数据</li>
+</ol>
+<ul>
+<li>那我们就只能用这些东西写游戏了，唉巧妇难为无米之炊啊，那我们该怎么办？没办法，只能简简单单的写点东西了。</li>
+</ul>
+<hr>
+<h3 id="先来定一个计划">先来定一个计划！</h3>
+<ul>
+<li>小游戏计划：
+<ul>
+<li>计划名称：我们自己的第一个小游戏</li>
+<li>可视化实现：运行窗口（UI我们也不会啊，你们猜猜我会不会？）</li>
+<li>游戏描述：猜数游戏，猜对给出正确提示，猜错则相反。</li>
+<li>进一步的优化用户体验（这个后面慢慢来）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="目标实现">目标实现：</h3>
+<ol>
+<li>打开编译器的编辑窗口(这不是废话吗？。？)<br>
+<img src="https://iimg.com.cn/p/71735faebbb09.jpg" alt="打开.jpg" loading="lazy"></li>
+<li><code>Ctrl+N</code>新建一个<code>.cpp</code>文件并保存为“猜数游戏.cpp”<s>(废话++)</s><br>
+<img src="https://iimg.com.cn/p/a7b8b94232e1c.jpg" alt="新建.jpg" loading="lazy"></li>
+<li>开始愉快的的码代码了！</li>
+<li>很快的我打出了下面的代码：<br>
+<img src="https://iimg.com.cn/p/0b81b306cd010.jpg" alt="代码.jpg" loading="lazy"></li>
+</ol>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+
+ return 0;
+}
+</code></pre>
+<p><s>再然后，似乎我就打不出来了</s><br>
+不慌不慌我们继续按照需求来。<br>
+5. 那么我们第一个语句的目的应该是：设置答案数据和提醒用户这个程序的目的————猜数,并且将用户输入的数据储存下来。<br>
+所以应该是：</p>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+ int a,n=2;
+ cout&lt;&lt;&quot;请猜一猜我心里在想什么！猜对有奖励的噢！&quot;&lt;&lt;endl;
+ cout&lt;&lt;&quot;请输入你猜测的数据：a = &quot;;
+ cin&gt;&gt;a;
+ return 0;
+}
+</code></pre>
+<ol start="6">
+<li>现在的任务就很简单了：判断输入数据是否和我们设置的答案数据相同并给出相应的提示语句就行了<a href="https://cans518.github.io/post/TvuGcU6bF/">查看判断结构</a></li>
+</ol>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int a,n=2;
+	cout&lt;&lt;&quot;请猜一猜我心里在想什么！猜对有奖励的噢！&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;请输入你猜测的数据：a = &quot;; 
+	cin&gt;&gt;a;
+	if(a == n)
+	{
+		cout&lt;&lt;&quot;恭喜你猜对了！奖励你CSP初赛模拟题一套！&quot;&lt;&lt;endl;
+	}
+	else
+	{
+		cout&lt;&lt;&quot;抱歉啊，猜错了。给你个安慰奖：CSP初赛模拟题两套！&quot;&lt;&lt;endl; 
+	}
+	return 0;
+}
+</code></pre>
+<ul>
+<li>这里使用<code>if-else</code>语句最为方便，你要用两次<code>if</code>或者<code>switch</code>我也没办法。（你们都可以试一试）</li>
+</ul>
+<ol start="7">
+<li>下面我们就来试一试效果：<br>
+<img src="https://iimg.com.cn/p/7ca15548d12e3.gif" alt="20191024_132944.gif" loading="lazy"></li>
+</ol>
+<hr>
+<h3 id="进一步修改制作猜数游戏11">进一步修改制作猜数游戏1.1</h3>
+<ul>
+<li>只不过你们可能会说：“这个东西这么简单 <s>（简陋）</s> ，连简单的交互都做不到，可以被称作游戏？！！！！”</li>
+<li>那我们就让这个游戏稍微的可玩性高一点——让这个程序在我们猜正确后再结束，这样就不会让我们一次次去点开这个程序了。</li>
+</ul>
+<blockquote>
+<p>和以前一样，还是先给出代码：</p>
+</blockquote>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int j=1;
+	while(1)
+	{
+		int a,n=2;
+		if(j == 1)
+		{
+			cout&lt;&lt;&quot;请猜一猜我心里在想什么！猜对有奖励的噢！&quot;&lt;&lt;endl;
+		}
+		cout&lt;&lt;&quot;请输入你猜测的数据：a = &quot;; 
+		cin&gt;&gt;a;
+		if(a == n)
+		{
+			cout&lt;&lt;&quot;恭喜你猜对了！奖励你CSP初赛模拟题一套！&quot;&lt;&lt;endl;
+			break;
+		}
+		else
+		{
+			cout&lt;&lt;&quot;抱歉啊，猜错了。给你个安慰奖：CSP初赛模拟题两套！\n&quot;&lt;&lt;endl;
+			cout&lt;&lt;&quot;请再猜一猜吧：&quot;&lt;&lt;endl; 
+		}
+		j++;
+	}
+	return 0;
+}
+</code></pre>
+<ul>
+<li>效果图：<br>
+<img src="https://iimg.com.cn/p/44d1b1c5a1606.gif" alt="效果图" loading="lazy"><br>
+当然在这个地方我们使用的是<strong>无限循环跳出</strong>的方法，另外的话我们可以使用另一种方法——<strong>满足条件循环</strong>。</li>
+<li>源代码：</li>
+</ul>
+<pre><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+	bool i =false;
+	int j=1;
+	while(i == false)
+	{
+		int a,n=2;
+		if(j == 1)
+		{
+			cout&lt;&lt;&quot;请猜一猜我心里在想什么！猜对有奖励的噢！&quot;&lt;&lt;endl;
+		}
+		cout&lt;&lt;&quot;请输入你猜测的数据：a = &quot;; 
+		cin&gt;&gt;a;
+		if(a == n)
+		{
+			cout&lt;&lt;&quot;恭喜你猜对了！奖励你CSP初赛模拟题一套！&quot;&lt;&lt;endl;
+			i = true;
+		}
+		else
+		{
+			cout&lt;&lt;&quot;抱歉啊，猜错了。给你个安慰奖：CSP初赛模拟题两套！\n&quot;&lt;&lt;endl;
+			cout&lt;&lt;&quot;请再猜一猜吧：&quot;&lt;&lt;endl; 
+		}
+		j++;
+	}
+	return 0;
+}
+</code></pre>
+<ul>
+<li>效果图：<br>
+<img src="https://iimg.com.cn/p/f9614addb23a4.gif" alt="效果图" loading="lazy"></li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://cans518.github.io/tag/6ZOCUs1fg/" class="tag">
+                    C++
+                  </a>
+                
+                  <a href="https://cans518.github.io/tag/EZsOsjLtB/" class="tag">
+                    竞赛
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://cans518.github.io/post/NXvU9So0f/">
+                  <h3 class="post-title">
+                    C++入门（8）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '440c604753917245d0e4',
+        clientSecret: 'f1b914dc8203e11fffee18d39a73b64ceae0ecc2',
+        repo: 'Cans518.github.io',
+        owner: 'Cans518',
+        admin: ['Cans518'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
